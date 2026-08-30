@@ -1,0 +1,3 @@
+# Required Python version: Python 3.10 or later
+# Required external packages
+requests>=2.31.0

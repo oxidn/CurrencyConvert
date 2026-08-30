@@ -1,0 +1,10 @@
+2026-08-30 20:42:54,538 - INFO - Successfully fetched exchange rates.
+2026-08-30 20:42:54,541 - INFO - Converted 100.0 USD to 9564.540200000001 INR
+2026-08-30 20:43:39,439 - INFO - Successfully fetched exchange rates.
+2026-08-30 20:43:39,440 - INFO - Converted 23.0 USD to 2199.844246 INR
+2026-08-30 20:44:42,482 - INFO - Converted 80 INR to 0.8 EUR
+2026-08-30 20:44:42,482 - ERROR - Unsupported source currency: XYZ
+2026-08-30 20:44:42,483 - ERROR - Unsupported target currency: XYZ
+2026-08-30 20:44:42,483 - ERROR - Invalid amount: must be greater than zero.
+2026-08-30 20:44:42,483 - INFO - Converted 100 USD to 8300.0 INR
+2026-08-30 20:44:42,483 - ERROR - Invalid amount: must be greater than zero.
