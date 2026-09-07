@@ -1,54 +1,138 @@
-import argparse
+import tkinter as tk
+from tkinter import messagebox
 from src.converter import convert_currency
 
+BLACK = "#000000"
+BLUE = "#2563EB"
+RED = "#DC2626"
+WHITE = "#FFFFFF"
+LIGHT_GRAY = "#F2F2F2"
 
-def main():
-    parser = argparse.ArgumentParser(
-        description="Convert currency using live exchange rates."
-    )
 
-    parser.add_argument(
-        "--from",
-        dest="from_currency",
-        required=True,
-        help="Source currency code (example: USD)"
-    )
-
-    parser.add_argument(
-        "--to",
-        dest="to_currency",
-        required=True,
-        help="Target currency code (example: INR)"
-    )
-
-    parser.add_argument(
-        "--amount",
-        required=True,
-        help="Amount to convert"
-    )
-
-    args = parser.parse_args()
-
+def convert():
     try:
-        amount = float(args.amount)
+        amount = float(amount_entry.get())
 
         result = convert_currency(
             amount,
-            args.from_currency,
-            args.to_currency
+            from_currency.get(),
+            to_currency.get()
         )
 
-        print(
-            f"{amount:.2f} {args.from_currency.upper()} = "
-            f"{result:.2f} {args.to_currency.upper()}"
+        result_label.config(
+            text=f"{amount:.2f} {from_currency.get()} = "
+                 f"{result:.2f} {to_currency.get()}",
+            fg=WHITE
         )
 
     except ValueError as error:
-        print(f"Error: {error}")
-
-    except Exception:
-        print("An unexpected error occurred. Please try again.")
+        result_label.config(text="Error", fg=RED)
+        messagebox.showerror("Error", str(error))
 
 
-if __name__ == "__main__":
-    main()
+def button_click():
+    # Simple click animation
+    convert_button.config(bg=RED)
+    window.after(100, lambda: convert_button.config(bg=BLUE))
+
+    convert()
+
+
+# Window
+window = tk.Tk()
+window.title("Currency Converter")
+window.geometry("400x450")
+window.configure(bg=BLACK)
+window.resizable(False, False)
+
+
+# Title
+tk.Label(
+    window,
+    text="Currency Converter",
+    font=("Arial", 22, "bold"),
+    bg=BLACK,
+    fg=WHITE
+).pack(pady=30)
+
+
+# Amount
+tk.Label(
+    window,
+    text="Amount",
+    bg=BLACK,
+    fg=WHITE
+).pack()
+
+amount_entry = tk.Entry(
+    window,
+    font=("Arial", 14),
+    bg=LIGHT_GRAY,
+    relief="flat"
+)
+amount_entry.pack(pady=8, ipady=8)
+
+
+# From currency
+tk.Label(
+    window,
+    text="From",
+    bg=BLACK,
+    fg=WHITE
+).pack()
+
+from_currency = tk.StringVar(value="USD")
+
+tk.OptionMenu(
+    window,
+    from_currency,
+    "USD", "INR", "EUR", "GBP", "JPY"
+).pack(pady=8)
+
+
+# To currency
+tk.Label(
+    window,
+    text="To",
+    bg=BLACK,
+    fg=WHITE
+).pack()
+
+to_currency = tk.StringVar(value="INR")
+
+tk.OptionMenu(
+    window,
+    to_currency,
+    "USD", "INR", "EUR", "GBP", "JPY"
+).pack(pady=8)
+
+
+# Convert button
+convert_button = tk.Button(
+    window,
+    text="Convert",
+    command=button_click,
+    bg=BLUE,
+    fg=WHITE,
+    font=("Arial", 12, "bold"),
+    relief="flat",
+    bd=0,
+    width=20
+)
+
+convert_button.pack(pady=20)
+
+
+# Result
+result_label = tk.Label(
+    window,
+    text="",
+    font=("Arial", 14, "bold"),
+    bg=BLACK,
+    fg=WHITE
+)
+
+result_label.pack(pady=10)
+
+
+window.mainloop()

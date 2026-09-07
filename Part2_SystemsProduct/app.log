@@ -8,3 +8,22 @@
 2026-08-30 20:44:42,483 - ERROR - Invalid amount: must be greater than zero.
 2026-08-30 20:44:42,483 - INFO - Converted 100 USD to 8300.0 INR
 2026-08-30 20:44:42,483 - ERROR - Invalid amount: must be greater than zero.
+2026-08-30 21:00:03,189 - ERROR - Invalid amount: must be greater than zero.
+2026-09-07 23:19:51,049 - INFO - Successfully fetched exchange rates.
+2026-09-07 23:19:51,076 - INFO - Converted 1321.0 USD to 124897.034819 INR
+2026-09-07 23:21:42,881 - INFO - Successfully fetched exchange rates.
+2026-09-07 23:21:42,884 - INFO - Converted 13.0 USD to 1229.115407 INR
+2026-09-07 23:21:46,061 - INFO - Successfully fetched exchange rates.
+2026-09-07 23:21:46,063 - INFO - Converted 13.0 USD to 1229.115407 INR
+2026-09-07 23:21:48,058 - INFO - Successfully fetched exchange rates.
+2026-09-07 23:21:48,060 - INFO - Converted 13.0 USD to 1229.115407 INR
+2026-09-07 23:21:49,024 - INFO - Successfully fetched exchange rates.
+2026-09-07 23:21:49,026 - INFO - Converted 13.0 USD to 1229.115407 INR
+2026-09-07 23:21:52,402 - INFO - Successfully fetched exchange rates.
+2026-09-07 23:21:52,404 - INFO - Converted 13.0 USD to 1229.115407 INR
+2026-09-07 23:23:55,281 - INFO - Successfully fetched exchange rates.
+2026-09-07 23:23:55,284 - INFO - Converted 53.0 USD to 5011.008967 INR
+2026-09-07 23:24:36,611 - INFO - Successfully fetched exchange rates.
+2026-09-07 23:24:36,614 - INFO - Converted 23.0 USD to 2174.588797 INR
+2026-09-07 23:27:29,401 - INFO - Successfully fetched exchange rates.
+2026-09-07 23:27:29,404 - INFO - Converted 35.0 USD to 3309.156865 INR
