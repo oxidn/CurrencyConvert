@@ -1,31 +1,50 @@
-Currency Converter - Systems Product
+# Currency Converter - Systems Product
 
-This is a command-line currency converter that uses live exchange rates from an external API.
+This is a currency converter with a simple graphical user interface (GUI) built using Tkinter. It uses live exchange rates from an external API.
 
-Requirements:
+## Requirements
 
 * Python 3.10 or later
 * Internet connection
 
-Installation:
+## Installation
+
+```bash
 pip install -r requirements.txt
+```
 
-Usage:
-python main.py --from USD --to INR --amount 150
+## Usage
 
-Example:
-python main.py --from INR --to USD --amount 1000
+Run the application:
 
-Features:
+```bash
+python main.py
+```
 
+The GUI allows you to:
+
+* Enter an amount
+* Select the source currency
+* Select the target currency
+* Convert using live exchange rates
+
+## Features
+
+* Simple Tkinter GUI
 * Live exchange rates
-* Command-line interface
+* Multiple currency options
 * Error handling for invalid inputs
-* Logging to app.log
+* Logging to `app.log`
 * Automated unit tests
 
-Run tests:
-python -m unittest discover tests
+## Run Tests
 
-API:
+```bash
+python -m unittest discover tests
+```
+
+## API
+
+This project uses the ExchangeRate-API:
+
 https://open.er-api.com/v6/latest/USD
